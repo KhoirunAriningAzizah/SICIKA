@@ -33,17 +33,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="example-email-input" class="col-2 col-form-label">Lama Cuti (hari)</label>
-                        <div class="col-10">
-                            <input class="form-control" name="lama_cuti" type="number" min="1" value="" id="example-email-input" required placeholder="Lama Cuti (hari)">
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="example-email-input" class="col-2 col-form-label">Keterangan</label>
                         <div class="col-10">
                             <input class="form-control" name="keterangan" type="text" value="" id="example-email-input" required>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Lama Cuti (hari)</label>
+                        <div class="col-10">
+                            <input class="form-control" name="lama_cuti" type="number" min="1" value="" id="example-email-input" required placeholder="Lama Cuti (hari)">
+                        </div>
+                    </div>
+                    
                     <div class="form-group row">
                         <label for="example-email-input" class="col-2 col-form-label">Alamat</label>
                         <div class="col-10">
