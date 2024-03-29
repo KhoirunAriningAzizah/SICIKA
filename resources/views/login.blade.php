@@ -43,7 +43,7 @@
         ga('create', 'UA-19175540-9', 'auto');
         ga('send', 'pageview');
     </script>
-    <title>Login | E-Cuti</title>
+    <title>Login | SICIKA</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -88,7 +88,7 @@
                     @endif
                             <input type="email" class="email" name="email" placeholder="Masukkan Email" required>
                             <input type="password" class="password" name="password" placeholder="Masukkan Password" style="margin-bottom: 2px;" required>
-                            <button name="submit" name="submit" class="btn" type="submit">Login</button>
+                            <br></br><button name="submit" name="submit" class="btn" type="submit">Login</button>
                             <div class="mt-2" style="width: 100%; text-align:right">
                             <a href="/forgot-password" >Lupa Kata Sandi ?</a>
                         </div>

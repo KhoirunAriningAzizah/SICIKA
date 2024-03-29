@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('plugins/images/cuti (2).png')}}">
-    <title>SI CUTKAR @yield('title')</title>
+    <title>SICIKA @yield('title')</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
@@ -97,12 +97,13 @@
                         <!-- /input-group -->
                     </li>
 
+                    
                     <li class="nav-small-cap m-t-10">--- Main Menu</li>
                     @if (Session('user')['role'] == 'admin')
                     <li> <a href="/admin/home" class="waves-effect "><i class="zmdi zmdi-view-dashboard zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Home  </span></a></li>
                     {{-- <li> <a href="/admin/manage-pejabat-struktural" class="waves-effect "><i class="zmdi zmdi-account zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Manage Pejabat Struktural  </span></a></li> --}}
+                    <li> <a href="/admin/manage-karyawan" class="waves-effect "><i class="zmdi zmdi-account zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Manage Pegawai  </span></a></li>
                     <li> <a href="/admin/kriteria" class="waves-effect "><i class="zmdi zmdi-account zmdi-hc-fw fa-fw"></i> <span class="hide-menu">  Bobot dan Kriteria  </span></a></li>
-                    <li> <a href="/admin/manage-karyawan" class="waves-effect "><i class="zmdi zmdi-account zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Manage Karyawan  </span></a></li>
                     <li> <a href="/admin/konfigurasi-cuti" class="waves-effect "><i class="zmdi zmdi-settings zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Konfigurasi Cuti  </span></a></li>
                     <li> <a href="/admin/manage-pengajuan-cuti" class="waves-effect "><i class="zmdi zmdi-settings zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Cuti Tahunan  </span></a></li>
                     {{-- <li> <a href="/admin/konversi-pengajuan-cuti/tahunan" class="waves-effect "><i class="zmdi zmdi-settings zmdi-hc-fw fa-fw"></i> <span class="hide-menu"> Konversi Alternatif Cuti Tahunan  </span></a></li>

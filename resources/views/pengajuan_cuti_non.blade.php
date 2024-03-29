@@ -88,7 +88,7 @@
                                 <td>{{$item->lama_cuti}} hari</td>
                                 <td>{{$item->keterangan}}</td>
                                 <td>
-                                    <img src="{{asset('uploadnon/'.$item->image)}}"alt="" style="width: 50px" >
+                                    <img src="{{asset('uploadnon/'.$item->lampiran)}}"alt="" style="width: 50px" >
                                 </td>
                                 <td>{{$item->status}}</td>
                                 {{-- <td>{{$item->verifikasi_oleh}}</td> --}}
@@ -105,7 +105,7 @@
         {{ csrf_field() }}
                       @method("DELETE")
 
-        <button class="btn btn-danger ml-auto mr-auto">Deletes</button>
+        <button class="btn btn-danger ml-auto mr-auto">Delete</button>
     </form>
 @endif
 

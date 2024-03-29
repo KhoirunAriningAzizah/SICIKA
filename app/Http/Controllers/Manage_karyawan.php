@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\models\Karyawan;
 use App\Models\Konfig_cuti;
 use App\Models\Pegawai;
+use App\Models\Pengajuan_cuti;
+use App\Models\Pengajuan_cuti_non;
 use App\Models\View_sisa_cuti;
 
 class Manage_karyawan extends Controller
@@ -28,8 +30,13 @@ class Manage_karyawan extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        if (Pegawai::create($request->all())) {
-            $getPegawaiBaru = Pegawai::orderBy('created_at', 'desc')->first();
+       $pegawai = Pegawai::create($request->all());
+       if ($request->hasFile('image') ) {
+        $request->file('image')->move('uploadnon/', $request->file('image')->getClientOriginalName());
+        $pegawai->image = $request->file('image')->getClientOriginalName();
+
+        if ($pegawai->save()) {
+            $getPegawaiBaru = Pegawai::orderBy('id', 'desc')->first();
             $getKonfigCuti = Konfig_cuti::where('tahun',(new \DateTime())->format('Y'))->first();
 
             $sisa_cuti = new View_sisa_cuti;
@@ -45,6 +52,8 @@ class Manage_karyawan extends Controller
         } else {
             return redirect(Session('user')['role'].'/manage-karyawan')->with('failed', 'Gagal membuat karyawan');
         }
+     }
+
     }
 
     public function edit(Request $request)
@@ -94,11 +103,16 @@ class Manage_karyawan extends Controller
     {
         $karyawan = Pegawai::findOrFail($id);
 
-
-
+        $sisacuti = View_sisa_cuti::where('pegawai_id', $id)->first();
+        if($sisacuti){
+        $sisacuti->delete();
+    }
+        $cutinon = Pengajuan_cuti_non::where('pegawai_id', $id)->first();
+        if($cutinon){$cutinon->delete();}
+        $cuti = Pengajuan_cuti::where('pegawai_id', $id)->first();
+        if($cuti){$cuti->delete();}
         if ($karyawan->delete()) {
-            $sisacuti = View_sisa_cuti::where('pegawai_id', $id)->first();
-             $sisacuti->delete();
+
             return redirect(Session('user')['role'].'/manage-karyawan')->with('success', 'Berhasil menghapus karyawan');
         } else {
             return redirect(Session('user')['role'].'/manage-karyawan')->with('failed', 'Gagal menghapus karyawan');
