@@ -23,7 +23,10 @@
         <div class="card-header">
           <h4 class="card-title">Edit Data </h4>
         </div>
-
+        <div class="form-group row">
+          <div class="col-md-12">
+              <a class="ml-auto mr-auto" href="/{{ Session('user')['role'] }}/kriteria">
+                  <button class="btn btn-danger btn-block">Kembali</button>
         <div class="card-body">
           <div class="row">
             <div class="col">

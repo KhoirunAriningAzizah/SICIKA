@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title','- Form Karyawan')
+@section('title','- Form Pegawai')
 
 @section('konten')
 <div class="container-fluid">
@@ -13,13 +13,19 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <a class="ml-auto mr-auto" href="/{{ Session('user')['role'] }}/manage-karyawan">
+                <button class="btn btn-danger ml-auto mr-auto">Kembali</button>
+        <br></br>
+    
 
     @if (Request::segment(3) == 'create')
     <!-- .row -->
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title m-b-0">Form Karyawan</h3>
+                <h3 class="box-title m-b-0">Form Pegawai</h3>
                 <hr>
                 <form class="form" action="/{{ Session('user')['role'] }}/manage-karyawan" method="post" enctype="multipart/form-data">
                     @csrf
@@ -95,9 +101,12 @@
                         <div class="col-md-12">
 
                             <button class="btn btn-primary btn-block" type="submit">Buat</button>
-                        </div>
+                            
+                        </div>       
                     </div>
+
                 </form>
+                
             </div>
         </div>
     </div>
@@ -176,6 +185,7 @@
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>

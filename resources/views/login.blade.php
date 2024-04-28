@@ -94,7 +94,7 @@
                         </div>
                         </form>
                         <div class="social-icons">
-                            <p>Create Account! <a href="/register">Register</a>.</p>
+                             {{-- <li>  <p>Create Account! <a href="/register">Register</a>.</p></li> --}}
                         </div>
                     </div>
                 </div>

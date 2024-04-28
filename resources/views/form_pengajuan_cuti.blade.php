@@ -16,7 +16,11 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-
+    <div class="form-group row">
+        <div class="col-md-12">
+            <a class="ml-auto mr-auto" href="/{{ Session('user')['role'] }}/manage-pengajuan-cuti">
+                <button class="btn btn-danger ml-auto mr-auto">Kembali</button>
+        <br></br>
     @if (Request::segment(3) == 'create')
     <!-- .row -->
     <div class="row">

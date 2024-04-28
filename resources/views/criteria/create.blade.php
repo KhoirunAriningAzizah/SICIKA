@@ -22,6 +22,10 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 
             </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                  <a class="ml-auto mr-auto" href="/{{ Session('user')['role'] }}/kriteria">
+                      <button class="btn btn-danger btn-block">Kembali</button>
             <!-- /.col-lg-12 -->
         </div>
     <section class="row">
@@ -46,10 +50,6 @@
                     <option value="benefit">Benefit</option>
                     <option value="cost">Cost</option>
                   </select>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-info btn-sm">
-                  <a class="btn btn-warning btn-sm" href="{{ route('kriteria.index') }}"> Back</a>
                 </div>
               </form>
             </div>
